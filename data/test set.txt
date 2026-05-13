@@ -1,0 +1,9 @@
+TestID,Scenario,UserPrompt,InputData,ExpectedOutcome,ValidationCheck
+1,Starter_Basic,Create a new starter request,"Name: John Smith; JobTitle: Analyst; Directorate: Finance; StartDate: 20 June 2026","Agent collects data and produces summary only (no email sent)","All required fields captured"
+2,Starter_MissingName,Create a new starter request,"JobTitle: Analyst; Directorate: Finance; StartDate: 20 June 2026","Agent prompts for missing name, no output generated yet","Missing name flagged"
+3,Starter_SpellingCheck,Create a new starter request,"Name: Jon Smyth; ConfirmSpelling: No","Agent asks user to re-enter name, no email action","Spelling loop works correctly"
+4,Starter_ShortNotice,Create a new starter request,"Name: Sarah Lee; StartDate: Tomorrow","Agent flags <5 working days notice and continues flow","Timing risk flagged"
+5,Starter_SoftwareDelay,Create a new starter request,"Name: Alex Brown; Software: ERP System","Agent warns about software lead time, summary only","Policy guidance shown"
+6,Starter_FullFlow,Create a new starter request,"Complete dataset provided","Agent produces structured summary and draft message (not sent)","End-to-end success without email send"
+7,Starter_MissingICT,Create a new starter request,"Name: Chris White; JobTitle: Manager","Agent asks ICT questions before completing","Completeness validation works"
+8,Leaver_Basic,Process a leaver,"Name: Emma Green; Payroll: 12345; LastDay: 30 June 2026","Agent produces offboarding summary only","All core fields captured"
